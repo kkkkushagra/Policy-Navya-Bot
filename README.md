@@ -92,7 +92,7 @@ However, millions of eligible citizens **miss out on their rightful benefits** e
 
 | Layer | Technology / Library | Purpose |
 |---|---|---|
-| **Core AI (Primary)** | `google-genai >= 2.0.0` | Google Gemini LLM (`gemini-3.5-flash-lite`). Structured answers, temperature `0.2`, max 800 output tokens, exponential backoff retry. |
+| **Core AI (Primary)** | `google-genai >= 2.0.0` | Google Gemini LLM (`gemini-3.5-flash-lite`). Structured answers, temperature `0.2`, max 2048 output tokens, exponential backoff retry. |
 | **Core AI (Fallback)** | `anthropic >= 0.20.0` | Anthropic Claude (`claude-haiku-4-5-20251001`) as secondary LLM if no Gemini key is configured. |
 | **Web Framework** | `fastapi >= 0.110.0` | Async REST API server hosting chat, streaming SSE, upload, search, stats, and static frontend endpoints. |
 | **ASGI Server** | `uvicorn[standard] >= 0.27.0` | Production-grade ASGI server for async request handling. |
@@ -121,7 +121,7 @@ NyayaBot uses **Google Gemini** as its primary AI engine:
 - **Default Model:** `gemini-3.5-flash-lite` (overridable via `GEMINI_MODEL` env var)
 - **SDK:** `google-genai >= 2.0.0` — uses `client.models.generate_content()` (sync) and `client.aio.models.generate_content_stream()` (async streaming)
 - **Retry Logic:** 3 attempts with exponential backoff (`0.5s → 1.0s → 2.0s`) on `503 UNAVAILABLE` or `429 RESOURCE_EXHAUSTED` errors
-- **Parameters:** `temperature=0.2`, `max_output_tokens=800`
+- **Parameters:** `temperature=0.2`, `max_output_tokens=2048`
 - **Free Tier:** Available at [Google AI Studio](https://aistudio.google.com/apikey) — no credit card required
 
 ### Anthropic Claude (Fallback)

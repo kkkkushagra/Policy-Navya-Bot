@@ -419,7 +419,7 @@ Answer in: {language}"""
                             ],
                             config=genai_types.GenerateContentConfig(
                                 system_instruction=system,
-                                max_output_tokens=800,
+                                max_output_tokens=2048,
                                 temperature=0.2,
                             )
                         )
@@ -439,7 +439,7 @@ Answer in: {language}"""
             elif self.provider == "anthropic":
                 response = self.client.messages.create(
                     model="claude-haiku-4-5-20251001",
-                    max_tokens=800,
+                    max_tokens=2048,
                     system=system,
                     messages=messages
                 )
@@ -492,7 +492,7 @@ Answer in: {language}"""
                 ]
                 gen_config = genai_types.GenerateContentConfig(
                     system_instruction=system,
-                    max_output_tokens=800,
+                    max_output_tokens=2048,
                     temperature=0.2,
                 )
 
@@ -509,7 +509,7 @@ Answer in: {language}"""
             elif self.provider == "anthropic":
                 with self.client.messages.stream(
                     model="claude-haiku-4-5-20251001",
-                    max_tokens=800,
+                    max_tokens=2048,
                     system=system,
                     messages=messages,
                 ) as stream:
@@ -611,7 +611,7 @@ Answer in: {language}"""
                 ]
                 gen_config = genai_types.GenerateContentConfig(
                     system_instruction=system,
-                    max_output_tokens=800,
+                    max_output_tokens=2048,
                     temperature=0.2,
                 )
 
@@ -646,7 +646,7 @@ Answer in: {language}"""
                 )
                 async with async_client.messages.stream(
                     model="claude-haiku-4-5-20251001",
-                    max_tokens=800,
+                    max_tokens=2048,
                     system=system,
                     messages=messages,
                 ) as stream:
