@@ -449,7 +449,7 @@ _markedRenderer.link = (href, title, text) => {
 
 // Inline code — keep the same look as before
 _markedRenderer.codespan = (code) =>
-  `<code style="background:rgba(232,160,69,0.1);padding:0.1rem 0.3rem;border-radius:3px;font-family:var(--font-mono);font-size:0.8em;">${code}</code>`;
+  `<code style="background:rgba(255,107,95,0.1);padding:0.1rem 0.3rem;border-radius:3px;font-family:var(--font-mono);font-size:0.8em;">${code}</code>`;
 
 marked.setOptions({
   renderer: _markedRenderer,
@@ -464,7 +464,7 @@ function formatMessage(text) {
       .replace(/^#{1,6}\s*(.+)$/gm, '<strong>$1</strong>')
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       .replace(/\*(.*?)\*/g, '<em>$1</em>')
-      .replace(/`(.*?)`/g, `<code style="background:rgba(232,160,69,0.1);padding:0.1rem 0.3rem;border-radius:3px;font-family:var(--font-mono);font-size:0.8em;">$1</code>`)
+      .replace(/`(.*?)`/g, `<code style="background:rgba(255,107,95,0.1);padding:0.1rem 0.3rem;border-radius:3px;font-family:var(--font-mono);font-size:0.8em;">$1</code>`)
       .replace(/\n/g, '<br/>')
       .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" style="color:var(--accent)">$1</a>');
   }

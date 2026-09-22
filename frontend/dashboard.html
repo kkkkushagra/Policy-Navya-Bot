@@ -4,8 +4,8 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NyayaBot Dashboard</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=4.0"/>
   <style>
     .dash-layout { max-width:1400px; margin:0 auto; padding:2rem; }
     .dash-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:2rem; }
@@ -33,7 +33,7 @@
     .bar-num { font-size:0.75rem; color:var(--text-muted); width:40px; text-align:right; font-family:var(--font-mono); }
     .query-list { display:flex; flex-direction:column; gap:0.6rem; }
     .query-item { display:flex; align-items:center; gap:0.75rem; padding:0.6rem 0.75rem; background:var(--surface2); border-radius:8px; }
-    .query-item .qi-lang { font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(232,160,69,0.1); border:1px solid rgba(232,160,69,0.2); color:var(--accent); border-radius:4px; flex-shrink:0; }
+    .query-item .qi-lang { font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(255,107,95,0.1); border:1px solid rgba(255,107,95,0.2); color:var(--accent); border-radius:4px; flex-shrink:0; }
     .query-item .qi-text { font-size:0.82rem; color:var(--text-muted); flex:1; }
     .query-item .qi-time { font-size:0.7rem; color:var(--text-dim); font-family:var(--font-mono); }
     .lang-pie { display:flex; flex-direction:column; gap:0.6rem; }
@@ -144,10 +144,10 @@
 
     // Language dist
     const langs = [
-      {name:'Hindi', pct:'38%', color:'#e8a045'},{name:'English', pct:'24%', color:'#4a9b6f'},
-      {name:'Bengali', pct:'12%', color:'#2a5298'},{name:'Tamil', pct:'10%', color:'#9b4a8a'},
-      {name:'Telugu', pct:'8%', color:'#c8893a'},{name:'Marathi', pct:'5%', color:'#4a7a9b'},
-      {name:'Gujarati', pct:'3%', color:'#9b7a4a'}
+      {name:'Hindi', pct:'38%', color:'#ff6b5f'},{name:'English', pct:'24%', color:'#65d6a1'},
+      {name:'Bengali', pct:'12%', color:'#168c8b'},{name:'Tamil', pct:'10%', color:'#ffb4a9'},
+      {name:'Telugu', pct:'8%', color:'#d94f52'},{name:'Marathi', pct:'5%', color:'#4aa6a1'},
+      {name:'Gujarati', pct:'3%', color:'#8bd8c1'}
     ];
     document.getElementById('langDist').innerHTML = langs.map(l=>`
       <div class="lang-row">
